@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Features: Arrow Functions, Spread/Rest Operator, Destructuring, Template Literals</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>ES6 Features: Arrow Functions, Spread/Rest Operator, Destructuring, Template Literals</h1>
+        <nav class="main-nav">
+            <a href="../index.html" class="home-icon">
+                <img src="../images/1679641_cabin_decorate_decoration_home_house_icon.png" alt="Home">
+            </a>
+            <button class="dropdown-btn">Gelişmiş Javascript Konuları</button>
+            <div class="dropdown-content">
+                <a href="es6-features.html">ES6 Features</a>
+                <a href="async_await.html">Fetching Data</a>
+                <a href="this-usage.html">Understanding "this" in JS</a>
+                <a href="closure-counter.html">Closures & HOFs</a>
+            </div>
+
+            <button class="dropdown-btn">Web API'ler ve Interface'ler</button>
+            <div class="dropdown-content">
+                <a href="../WebAPIs/web-apis.html">Web APIs</a>
+                <a href="../WebAPIs/fetch-api.html">Fetch API</a>
+                <a href="../WebAPIs/storage-api.html">Storage API</a>
+                <a href="../WebAPIs/web-workers.html">Web Workers</a>
+                <a href="../WebAPIs/mutation-observer.html">Mutation Observer</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>ES6 Features</h2>
+            <p>ECMAScript 6 (ES6), JavaScript diline birçok yeni özellik ekler. Bu bölümde, ok fonksiyonları (arrow
+                functions), spread/rest operatörleri, destructuring ve template literals gibi ES6 özelliklerini
+                inceleyeceğiz.</p>
+            <h3>Arrow Functions</h3>
+            <p>Ok fonksiyonları, daha kısa ve okunabilir fonksiyon tanımları yapmamıza olanak tanır:</p>
+            <pre><code>const sum = (a, b) => a + b;</code></pre>
+            <h3>Spread/Rest Operator</h3>
+            <p>Spread operatörü, bir array veya objeyi diğerine genişletmek için kullanılır:</p>
+            <pre><code>const arr1 = [1, 2, 3]; const arr2 = [...arr1, 4, 5, 6]; // arr2 = [1, 2, 3, 4, 5, 6] console.log(arr2);</code></pre>
+            <p>Rest operatörü, bir fonksiyona gönderilen argümanları array olarak toplar:</p>
+            <pre><code>function sum(...args) { return args.reduce((acc, val) => acc + val, 0); } console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+            <h3>Destructuring</h3>
+            <p>Destructuring, array veya objelerden veri çıkarmak için kullanılır:</p>
+            <pre><code>const [a, b] = [1, 2]; console.log(a); // 1 console.log(b); // 2</code></pre>
+            <pre><code>const person = { name: 'John', age: 30 }; const { name, age } = person; console.log(name); // John console.log(age); // 30</code></pre>
+            <h3>Template Literals</h3>
+            <p>Template literals, backtick (\`) işaretleri arasında yazılır ve değişken interpolasyonu yapılabilir:</p>
+            <pre><code>const name = 'John'; const message = \`Hello, \${name}!\`; console.log(message); // Hello, John!</code></pre>
+            <p>Ek Bilgi: Template literals yazarken `backtick` kullanılır. Türkçe klavyede `AltGr` + `Ü` (veya İngilizce
+                klavyede `Alt` + `96`) tuş kombinasyonu ile yazılır.</p>
+        </section>
+
+        <section id="todo-section" class="section">
+            <h2>Görevler</h2>
+            <input type="text" id="todoInput" placeholder="Yeni görev ekleyin">
+            <button onclick="addTodo()">Ekle</button>
+            <ul id="todoList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

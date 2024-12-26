@@ -1,0 +1,219 @@
+/* Genel Stiller */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.current-page {
+    pointer-events: none;
+    color: grey;
+    cursor: default;
+}
+
+header {
+    background-color: #284d7e;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.home-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Dik eksende kendi yüksekliğinin %50'si kadar yukarı kaydırarak ortala */
+}
+
+.home-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Navbar İçeriği */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #343a40;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #284d7e;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    border: 2px solid #284d7e;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 2rem;
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.logos {
+    display: flex;
+    gap: 1rem;
+}
+
+.tech-logo {
+    width: 100px;
+    height: 100px;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    width: 200px;
+    margin-right: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    color: #284d7e;
+    border-bottom: 2px solid #284d7e;
+    padding-bottom: 0.5rem;
+}
+
+/* Dropdown Menüsü Stilleri */
+.dropdown-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: #5a6268;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #495057;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 0.75rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #343a40;
+}
+
+.show {
+    display: block;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+#user-container,
+#counterValue {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+#counter-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #343a40;
+    color: white;
+}
+
+/*
+#dev-tools-example-section p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+#output-container {
+    margin-top: 10px;
+    padding: 0;
+} */

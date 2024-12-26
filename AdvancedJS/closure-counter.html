@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures & HOFs</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Closures & HOFs</h1>
+        <nav class="main-nav">
+            <a href="../index.html" class="home-icon">
+                <img src="../images/1679641_cabin_decorate_decoration_home_house_icon.png" alt="Home">
+            </a>
+            <button class="dropdown-btn">Gelişmiş Javascript Konuları</button>
+            <div class="dropdown-content">
+                <a href="es6-features.html">ES6 Features</a>
+                <a href="async_await.html">Asynchronous JS</a>
+                <a href="this-usage.html">Understanding "this" in JS</a>
+                <a href="closure-counter.html">Closures & HOFs</a>
+            </div>
+
+            <button class="dropdown-btn">Web API'ler ve Interface'ler</button>
+            <div class="dropdown-content">
+                <a href="../WebAPIs/web-apis.html">Web APIs</a>
+                <a href="../WebAPIs/fetch-api.html">Fetch API</a>
+                <a href="../WebAPIs/storage-api.html">Storage API</a>
+                <a href="../WebAPIs/web-workers.html">Web Workers</a>
+                <a href="../WebAPIs/mutation-observer.html">Mutation Observer</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section id="closures-hofs-section">
+            <h2>Closures</h2>
+            <p>Closure, bir fonksiyonun, tanımlandığı leksik ortamın değişkenlerine erişimini sağlayan bir JavaScript
+                özelliğidir. Başka bir deyişle, bir iç fonksiyon, dış fonksiyonun değişkenlerine ve parametrelerine
+                erişebilir, bu değişkenler dış fonksiyonun çalışması tamamlandıktan sonra bile yaşamaya devam eder.</p>
+            <p>Closure'lar, özel değişkenler ve veri gizleme için kullanılır.</p>
+            <pre><code>function createCounter() { 
+                let count = 0; 
+
+                return { increment() { 
+                    count++; 
+                    console.log(`Count: ${count}`); 
+                }, 
+                decrement() { 
+                    count--; 
+                    console.log(`Count: ${count}`); 
+                } 
+            }; 
+        } 
+        
+        const counter = createCounter(); 
+        counter.increment(); // Count: 1 
+        counter.increment(); // Count: 2 
+        counter.decrement(); // Count: 1</code></pre>
+
+            <h2>Higher Order Functions (HOFs)</h2>
+            <p>Yüksek düzey fonksiyonlar (Higher Order Functions), başka fonksiyonları argüman olarak kabul eden veya
+                bir fonksiyonu döndüren fonksiyonlardır. Bu fonksiyonlar, JavaScript'te fonksiyonların birinci sınıf
+                vatandaşlar (first-class citizens) olduğunu gösterir.</p>
+            <p>HOFs, fonksiyon kompozisyonu ve kod tekrarını azaltma gibi avantajlar sağlar.</p>
+            <pre><code>// Bir array'deki her elemanı iki katına çıkarma 
+                const numbers = [1, 2, 3, 4]; 
+                const doubled = numbers.map(num => num * 2); 
+                console.log(doubled); // [2, 4, 6, 8] 
+                
+                // Bir array'den belirli şartlara uyan elemanları filtreleme 
+                const evens = numbers.filter(num => num % 2 === 0); 
+                console.log(evens); // [2, 4] 
+                
+                // Bir array'deki elemanları toplayarak bir değere dönüştürme 
+                const sum = numbers.reduce((acc, num) => acc + num, 0); 
+                console.log(sum); // 10</code></pre>
+
+            <section id="closure-section" class="section">
+                <h2>Closure Sayaç</h2>
+                <button id="incrementBtn">Arttır</button>
+                <button id="decrementBtn">Azalt</button>
+                <div id="counterValue">0</div>
+            </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

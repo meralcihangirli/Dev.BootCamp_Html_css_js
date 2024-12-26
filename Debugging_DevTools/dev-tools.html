@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Browser’s Developer Tools</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Using Browser’s Developer Tools</h1>
+        <nav class="main-nav">
+            <a href="../index.html" class="home-icon">
+                <img src="../images/1679641_cabin_decorate_decoration_home_house_icon.png" alt="Home">
+            </a>
+            <button class="dropdown-btn">Gelişmiş Javascript Konuları</button>
+            <div class="dropdown-content">
+                <a href="../AdvancedJS/es6-features.html">ES6 Features</a>
+                <a href="../AdvancedJS/async_await.html">Asynchronous JS</a>
+                <a href="../AdvancedJS/this-usage.html">Understanding "this" in JS</a>
+                <a href="../AdvancedJS/closure-counter.html">Closures & HOFs</a>
+            </div>
+
+            <button class="dropdown-btn">Web API'ler ve Interface'ler</button>
+            <div class="dropdown-content">
+                <a href="../WebAPIs/web-apis.html">Web APIs</a>
+                <a href="../WebAPIs/fetch-api.html">Fetch API</a>
+                <a href="../WebAPIs/storage-api.html">Storage API</a>
+                <a href="../WebAPIs/web-workers.html">Web Workers</a>
+                <a href="../WebAPIs/mutation-observer.html">Mutation Observer</a>
+            </div>
+
+            <button class="dropdown-btn">Hata Ayıklama ve Geliştirici Araçları</button>
+            <div class="dropdown-content">
+                <a href="dev-tools.html">Using Dev Tools</a>
+                <a href="debugging.html">Debugging JS</a>
+                <a href="profiling.html">Performance Profiling</a>
+                <a href="network.html">Network Analysis</a>
+                <a href="accessibility.html">Accessibility Testing</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="dev-tools-section" class="section">
+            <h2>Using Browser’s Developer Tools</h2>
+            <p>Tarayıcı geliştirici araçları (Browser Developer Tools), web geliştiricilerin web sayfalarını
+                incelemesine, hata ayıklamasına ve performansını optimize etmesine yardımcı olan güçlü araçlardır. İşte
+                bu araçların önemini ve nasıl kullanılacağını açıklayan bazı önemli noktalar:</p>
+            <h3>1. Inspect Element (Öğe İncele)</h3>
+            <p>Bu araç, HTML ve CSS kodlarını incelemeyi ve düzenlemeyi sağlar. Bir öğeye sağ tıklayıp "Öğeyi İncele"
+                seçeneğini seçerek erişilebilir.</p>
+            <p><em>Örnek Uygulama:</em> Bir öğenin stilini değiştirme.</p>
+
+            <h3>2. Console (Konsol)</h3>
+            <p>JavaScript kodlarını doğrudan çalıştırabilir ve hataları takip edebilirsin. Console, hata mesajlarını ve
+                diğer önemli bilgileri görüntüler.</p>
+            <p><em>Örnek Uygulama:</em>
+            <pre><code>console.log("Debugging starts...");</code></pre>
+            </p>
+
+            <h3>3. Sources (Kaynaklar)</h3>
+            <p>Bu sekme, JavaScript ve diğer dosyaları incelemek ve hata ayıklamak için kullanılır. Breakpointler
+                ekleyerek kodun adım adım çalışmasını izleyebilirsin.</p>
+            <p><em>Örnek Uygulama:</em> Breakpoint ekleyerek hata ayıklama.</p>
+
+            <h3>4. Network (Ağ)</h3>
+            <p>Ağ sekmesi, sayfaya yapılan tüm ağ isteklerini görüntüler. Bu, veri yüklemeleri, API çağrıları ve diğer
+                ağ işlemleri hakkında bilgi verir.</p>
+            <p><em>Örnek Uygulama:</em> API isteklerinin süresini ve yanıtlarını inceleme.</p>
+
+            <h3>5. Performance (Performans)</h3>
+            <p>Sayfanın performansını analiz eder ve optimize etme fırsatları sunar. Kaynakların yüklenme sürelerini ve
+                CPU kullanımını gösterir.</p>
+            <p><em>Örnek Uygulama:</em> Sayfa yüklenme süresini analiz etme.</p>
+        </section>
+
+        <section id="dev-tools-example-section">
+            <h3>Örnek Uygulama</h3>
+            <p>Burada, geliştirici araçlarını kullanarak hataları nasıl bulup düzeltebileceğinizi göreceksiniz.</p>
+          
+            <pre><code>// console.log ile veri izleme 
+                console.log("Veri izleme başladı..."); 
+                let data = [1, 2, 3, 4, 5]; 
+                data.forEach(item => { 
+                    console.log(item); 
+                }); 
+                
+                // Hata Ayıklama İçin Fonksiyon 
+                function addNumbers(a, b) { 
+                    if (typeof a !== 'number' || typeof b !== 'number') { 
+                        console.error("Her iki parametre de sayı olmalıdır"); 
+                        return; 
+                    } 
+                    return a + b; 
+                } 
+                
+                addNumbers(10, "5"); // Hata: Her iki parametre de sayı olmalıdır 
+            </code></pre>
+            <p>Detaylı kodlar için proje kodlarını inceleyebilirsiniz.</p>
+            <div id="output-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

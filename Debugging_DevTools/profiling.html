@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Profiling</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Performance Profiling</h1>
+        <nav class="main-nav">
+            <a href="../index.html" class="home-icon">
+                <img src="../images/1679641_cabin_decorate_decoration_home_house_icon.png" alt="Home">
+            </a>
+            <button class="dropdown-btn">Gelişmiş Javascript Konuları</button>
+            <div class="dropdown-content">
+                <a href="../AdvancedJS/es6-features.html">ES6 Features</a>
+                <a href="../AdvancedJS/async_await.html">Asynchronous JS</a>
+                <a href="../AdvancedJS/this-usage.html">Understanding "this" in JS</a>
+                <a href="../AdvancedJS/closure-counter.html">Closures & HOFs</a>
+            </div>
+
+            <button class="dropdown-btn">Web API'ler ve Interface'ler</button>
+            <div class="dropdown-content">
+                <a href="../WebAPIs/web-apis.html">Web APIs</a>
+                <a href="../WebAPIs/fetch-api.html">Fetch API</a>
+                <a href="../WebAPIs/storage-api.html">Storage API</a>
+                <a href="../WebAPIs/web-workers.html">Web Workers</a>
+                <a href="../WebAPIs/mutation-observer.html">Mutation Observer</a>
+            </div>
+
+            <button class="dropdown-btn">Hata Ayıklama ve Geliştirici Araçları</button>
+            <div class="dropdown-content">
+                <a href="dev-tools.html">Using Dev Tools</a>
+                <a href="debugging.html">Debugging JS</a>
+                <a href="profiling.html">Performance Profiling</a>
+                <a href="network.html">Network Analysis</a>
+                <a href="accessibility.html">Accessibility Testing</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <h2>Performance Profiling</h2>
+            <p>Performance profiling, web sayfasının performansını ölçmek, analiz etmek ve optimize etmek için
+                kullanılan bir tekniktir. Bu süreç, sayfanın yüklenme sürelerini, CPU ve bellek kullanımını analiz
+                etmeyi ve performans darboğazlarını belirlemeyi içerir.</p>
+
+            <h3>Performance Profiling Teknikleri</h3>
+            <h4>Performance Tab Kullanımı</h4>
+            <p>Tarayıcı geliştirici araçlarındaki Performance tab, sayfanın performansını analiz etmek için kullanılır.
+                Performans profilini çıkarmak için kayıt başlatılır, sayfa işlemleri gerçekleştirilir ve kayıt
+                durdurularak analiz yapılır.</p>
+
+            <h4>Yavaş Yüklenen Scriptlerin Tespiti</h4>
+            <p>Geliştirici araçları, hangi scriptlerin sayfa yüklenmesini yavaşlattığını belirlemek için kullanılabilir.
+                Script yüklenme sürelerini analiz ederek gerekli optimizasyonlar yapılabilir.</p>
+
+            <h4>Memory Tab Kullanımı</h4>
+            <p>Memory tab, sayfanın bellek kullanımını analiz eder. Bu araç, bellek sızıntılarını ve gereksiz bellek
+                kullanımını tespit etmek için kullanılır.</p>
+
+            <h3>Örnek Uygulama</h3>
+            <p>Burada, performance profiling tekniklerini nasıl kullanabileceğinizi göreceksiniz.</p>
+            <pre><code>// Performans Ölçümü 
+                console.time("Loop Time"); 
+                for (let i = 0; i < 1000000; i++) { 
+                    // Yüksek sayıda iterasyon 
+                } console.timeEnd("Loop Time"); 
+                
+                // Bellek Kullanımı Analizi 
+                const largeArray = new Array(1000000).fill(0); 
+                console.log("Bellek kullanımı: ", window.performance.memory.usedJSHeapSize); 
+                
+                // Yavaş Script Tespiti setTimeout(() => { 
+                    console.time("Yavaş İşlem"); 
+                    // Yavaş çalışan bir işlem 
+                    for (let i = 0; i < 1000000; i++) { 
+                        let x = i * i; 
+                    } 
+                    console.timeEnd("Yavaş İşlem"); 
+                }, 1000); </code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding "this" in JS</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Understanding "this" in JS</h1>
+        <nav class="main-nav">
+            <a href="../index.html" class="home-icon">
+                <img src="../images/1679641_cabin_decorate_decoration_home_house_icon.png" alt="Home">
+            </a>
+            <button class="dropdown-btn">Gelişmiş Javascript Konuları</button>
+            <div class="dropdown-content">
+                <a href="es6-features.html">ES6 Features</a>
+                <a href="async_await.html">Asynchronous JS</a>
+                <a href="this-usage.html">Understanding "this" in JS</a>
+                <a href="closure-counter.html">Closures & HOFs</a>
+            </div>
+
+            <button class="dropdown-btn">Web API'ler ve Interface'ler</button>
+            <div class="dropdown-content">
+                <a href="../WebAPIs/web-apis.html">Web APIs</a>
+                <a href="../WebAPIs/fetch-api.html">Fetch API</a>
+                <a href="../WebAPIs/storage-api.html">Storage API</a>
+                <a href="../WebAPIs/web-workers.html">Web Workers</a>
+                <a href="../WebAPIs/mutation-observer.html">Mutation Observer</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="this-section" class="section">
+            <h2>This Kullanımı</h2>
+            <p>JavaScript'te <code>this</code> anahtar kelimesi, bir nesnenin kendisini referans almak için kullanılır.
+                "This" kavramı, hangi bağlamda kullanıldığına bağlı olarak farklılık gösterebilir. İşte birkaç örnekle
+                "this" kullanımı:</p>
+
+            <h3>1. Global Scope</h3>
+            <p>Global scope'da <code>this</code>, global nesneyi (tarayıcı ortamında <code>window</code>) referans alır.
+            </p>
+            <pre><code>console.log(this); // Tarayıcıda window nesnesi</code></pre>
+
+            <h3>2. Bir Obje İçinde</h3>
+            <p>Bir nesnenin içinde, <code>this</code> anahtar kelimesi o nesneyi referans alır.</p>
+            <pre><code>const user = { 
+                name: 'Jane', 
+                greet() { 
+                    console.log(`Hello, my name is ${this.name}`); 
+                } 
+            }; 
+            
+            user.greet(); // Hello, my name is Jane</code></pre>
+
+            <h3>3. Bir Fonksiyon İçinde</h3>
+            <p>Bir fonksiyon içinde, <code>this</code> anahtar kelimesi global nesneyi referans alır (strict mode'da
+                undefined olabilir).</p>
+            <pre><code>function showThis() { 
+                console.log(this); 
+            } 
+            
+            showThis(); // Tarayıcıda window nesnesi (strict mode'da undefined)</code></pre>
+
+            <h3>4. Arrow Functions</h3>
+            <p>Arrow fonksiyonlar, lexical scoping kullanır ve <code>this</code> değeri, tanımlandığı yerin
+                <code>this</code> değerini alır.
+            </p>
+            <pre><code>const user = { 
+                name: 'Jane', 
+                greet: () => { 
+                    console.log(`Hello, my name is ${this.name}`); // "this" global scope'dan alınır 
+                } 
+            }; 
+            
+            user.greet(); // Hello, my name is undefined</code></pre>
+
+            <h3>Örnek Uygulama</h3>
+            <p>Aşağıdaki örnekte, "this" anahtar kelimesinin nasıl kullanıldığını göreceksiniz:</p>
+            <pre><code>// this kullanımı 
+                const user = { 
+                    name: 'Meral', 
+                    occupation: 'CodeLover', 
+                    greet() { 
+                        const message = `Merhaba, ben ${this.name} ve bir ${this.occupation} olarak 
+                        öğrenmeyi seviyorum.`; 
+                        const userContainer = document.getElementById('user-container'); 
+                        if (userContainer) { 
+                            userContainer.innerText = message; 
+                        } 
+                    } 
+                };
+
+                user.greet();</code></pre>
+
+            <h4>Kodun Çıktısı:</h4>
+            <div id="user-container" class="section"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
